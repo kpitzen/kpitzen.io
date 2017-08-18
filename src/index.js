@@ -1,5 +1,5 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+// import React from 'react';
+// import ReactDOM from 'react-dom';
 import './index.css';
 
 // var testData = [1, 2, 3, 4, 1, 2];
