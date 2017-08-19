@@ -32,7 +32,7 @@ class DataFetcher {
     }
 
     fetchData() {
-        fetch('http://data.kpitzen.io/optiondata/' + this.ticker, {
+        fetch('https://data.kpitzen.io/optiondata/' + this.ticker, {
             mode: 'cors',    
         }).then(response => this.setData(response.json))
           .then(console.log(this.state.data))
