@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { LineChart, Line, XAxis, Tooltip, Legend } from 'recharts';
+import { ComposedChart, Line, Bar, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import './index.css';
 import 'whatwg-fetch';
 
@@ -66,7 +66,7 @@ class GraphInput extends React.Component {
 
   render() {
     return (
-        <div className="search">
+        <div className="search align-center">
           <input type="text" onChange={this.handleChange} value={this.state.value} />
           <input type="submit" value="Search" className="search-button" id="ticker-button" onClick={() => this.dataFetcher.updateData(this.state.value)}/>
         </div>
@@ -85,16 +85,20 @@ class Graph extends React.Component {
     // const status = 'Next player: X';
 
     return (<div>
-                <LineChart width={350} height={300} data={ this.graphInput.dataFetcher.state.data }>
-                    <XAxis dataKey="strike"/>
-                   <Line type="monotone" dataKey="ask" stroke="#8884d8" />
-                   <Line type="monotone" dataKey="price" stroke="#66ccff" />
-                   <Line type="monotone" dataKey="bid" stroke="#dbdbdb" />
-                   <Tooltip />
-                   <Legend />
-                </LineChart>
-
-                <GraphInput />
+                <ResponsiveContainer className="align-center" height={700} width="100%" aspect={16/9} minWidth={400}>
+                    <ComposedChart data={ this.graphInput.dataFetcher.state.data }>
+                       <Bar dataKey="volume" fill="#5385c1" yAxisId={1}/>
+                       <Line type="monotone" dataKey="ask" stroke="#daa520" />
+                       <Line type="monotone" dataKey="price" stroke="#dbdbdb" />
+                       <Line type="monotone" dataKey="bid" stroke="#66ccff" />
+                        <YAxis name="lineaxis" yAxisId={0} />
+                        <YAxis name="baraxis" orientation="right" yAxisId={1} />
+                        <XAxis dataKey="strike" padding={{right:20}} type="number" domain={['dataMin', 'dataMax']}/>
+                       <Tooltip />
+                       <Legend />
+                    </ComposedChart>
+                </ResponsiveContainer>
+                    <GraphInput />
             </div>
     );
   }

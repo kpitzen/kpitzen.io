@@ -49,6 +49,20 @@
 		-webkit-text-size-adjust: none;
 	}
 
+/* recharts */
+	.recharts-cartesian-axis-line {
+		stroke: rgba(255, 255, 255, .4);
+	}
+	.recharts-cartesian-axis-tick-line {
+		stroke: rgba(255, 255, 255, .4);
+	}
+
+	.recharts-text {
+		fill: rgba(255, 255, 255, .6);
+	}
+
+
+
 /* Box Model */
 
 	*, *:before, *:after {
@@ -2212,6 +2226,14 @@
 				.box.person .image img {
 					max-width: 100%;
 				}
+
+		.box.graph {
+			max-width: 100%;
+			align-self: center;
+			background: rgba(0, 0, 0, 0.125);
+			color: rgba(255, 255, 255, 0.4);
+			/* border-color: rgba(255, 255, 255, .2); */
+		}
 
 /* Icon */
 
