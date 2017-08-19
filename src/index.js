@@ -20,7 +20,7 @@ class DataFetcher {
         this.setTicker = this.setTicker.bind(this);
         this.setData = this.setData.bind(this);
         this.getData = this.getData.bind(this);
-        console.log(this.state.data)
+        // console.log(this.state.data)
     }
 
     setData(data) {
