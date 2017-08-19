@@ -87,15 +87,15 @@ class Graph extends React.Component {
     return (<div>
                 <ResponsiveContainer className="align-center" height={700} width="100%" aspect={16/9} minWidth={400}>
                     <ComposedChart data={ this.graphInput.dataFetcher.state.data }>
-                       <Bar dataKey="volume" fill="#5385c1" yAxisId={1}/>
-                       <Line type="monotone" dataKey="ask" stroke="#daa520" />
-                       <Line type="monotone" dataKey="price" stroke="#dbdbdb" />
-                       <Line type="monotone" dataKey="bid" stroke="#66ccff" />
+                        <Bar dataKey="volume" fill="#5385c1" yAxisId={1}/>
+                        <Line type="monotone" dataKey="ask" stroke="#daa520" />
+                        <Line type="monotone" dataKey="price" stroke="#dbdbdb" />
+                        <Line type="monotone" dataKey="bid" stroke="#66ccff" />
                         <YAxis name="lineaxis" yAxisId={0} />
                         <YAxis name="baraxis" orientation="right" yAxisId={1} />
-                        <XAxis dataKey="strike" padding={{right:20}} type="number" domain={['dataMin', 'dataMax']}/>
-                       <Tooltip />
-                       <Legend />
+                        <XAxis label="strike" tick={false} dataKey="strike" padding={{right:20}} type="number" domain={['dataMin', 'dataMax']}/>
+                        <Tooltip />
+                        <Legend />
                     </ComposedChart>
                 </ResponsiveContainer>
                     <GraphInput />

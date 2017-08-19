@@ -2229,6 +2229,7 @@
 
 		.box.graph {
 			max-width: 100%;
+			max-height: 100%;
 			align-self: center;
 			background: rgba(0, 0, 0, 0.125);
 			color: rgba(255, 255, 255, 0.4);
@@ -2491,7 +2492,6 @@
 
 	.search {
 		position: relative;
-		margin: 0 auto;
 	}
 
 	.search-button {
