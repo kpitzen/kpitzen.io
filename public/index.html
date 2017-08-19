@@ -5,6 +5,7 @@
 	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
 -->
 <html>
+
 	<head>
 		<title>KPitzen</title>
 		<meta charset="utf-8" />
@@ -38,11 +39,11 @@
 					<div class="flex flex-3">
 						<article>
 							<header>
-								<h3>Current Project:<br /> MTGScraper</h3>
+								<h3>Current Project:<br /> Finance Scraper</h3>
 							</header>
-							<p>A scalable batch process for accessing and retrieving MTG data</p>
+							<p>A scalable batch process for accessing and retrieving finance data</p>
 							<footer>
-								<a href="https://kpitzen.github.io/mtgscraper/" class="button special">More</a>
+								<a href="https://kpitzen.github.io/financescraper/" class="button special">More</a>
 							</footer>
 						</article>
 						<article>
@@ -65,31 +66,29 @@
 						</article>
 					</div>
 				</div>
-				<div id="graph"></div>
 			</section>
 
 		<!-- Two -->
-			<!--<section id="two" class="wrapper style1 special">
+			<section id="two" class="wrapper style1 special">
 				<div class="inner">
 					<header>
-						<h2>Ipsum Feugiat</h2>
-						<p>Semper suscipit posuere apede</p>
+						<h2>Interactive Projects</h2>
+						<!-- <p>Choose a stock ticker</p> -->
 					</header>
-					<div class="flex flex-4">
-						<div class="box person">
-							<div class="image round">
-								<img src="images/pic03.jpg" alt="Person 1" />
-							</div>
-							<h3>Magna</h3>
-							<p>Cipdum dolor</p>
+					<div class="flex">
+						<div class="box">
+								<div class=chart-wrapper id="graph"></div>
+							<h3>Finance Scraper</h3>
+							<p>Choose a stock ticker</p>
 						</div>
-						<div class="box person">
+						<!-- <div class="box">
 							<div class="image round">
 								<img src="images/pic04.jpg" alt="Person 2" />
 							</div>
-							<h3>Ipsum</h3>
+							<h3>Coming Soon</h3>
 							<p>Vestibulum comm</p>
-						</div>
+						</div> -->
+					<!--
 						<div class="box person">
 							<div class="image round">
 								<img src="images/pic05.jpg" alt="Person 3" />
@@ -102,14 +101,14 @@
 								<img src="images/pic06.jpg" alt="Person 4" />
 							</div>
 							<h3>Dolore</h3>
-							<p>Praesent placer</p>
+							<p>Praesent placer</p> -->
 						</div>
 					</div>
 				</div>
-			</section>-->
+			</section>
 
 		<!-- Three -->
-			<!--<section id="three" class="wrapper special">
+			<!-- <section id="three" class="wrapper special">
 				<div class="inner">
 					<header class="align-center">
 						<h2>Nunc Dignissim</h2>
@@ -142,8 +141,16 @@
 						</article>
 					</div>
 				</div>
-			</section>-->
-
+			</section> -->
+			<!-- Errors  -->
+				<div id="errors" style="
+				  background: #c00;
+				  color: #fff;
+				  display: none;
+				  margin: -20px -20px 20px;
+				  padding: 20px;
+				  white-space: pre-wrap;
+				"></div>		
 		<!-- Footer -->
 			<footer id="footer">
 				<div class="inner">
@@ -162,6 +169,7 @@
 				</div>
 			</footer>
 
+			
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/skel.min.js"></script>
