@@ -14,7 +14,7 @@ class DataFetcher {
         };
 
         this.ticker = "AAPL";
-        // this.fetchData();
+        this.fetchData();
         this.fetchData = this.fetchData.bind(this);
         this.updateData = this.updateData.bind(this);
         this.setTicker = this.setTicker.bind(this);
