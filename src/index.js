@@ -84,7 +84,7 @@ class Graph extends React.Component {
     // const status = 'Next player: X';
 
     return (<div>
-                <ResponsiveContainer height="80%" width="100%" aspect={16/9} minWidth={400}>
+                <ResponsiveContainer height="80%" width="100%" aspect={16/9} minWidth={300}>
                     <ComposedChart data={ this.state.data.filter(getOptionTypes) }>
                         <Bar dataKey="volume" fill="#5385c1" yAxisId={1}/>
                         <Line type="monotone" dataKey="ask" stroke="#daa520" />
