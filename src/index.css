@@ -2501,6 +2501,16 @@
 		z-index: 1;
 	}
 
+	@media screen and (max-width: 480px) {
+		.search-button {
+			position: relative;
+			top: auto;
+			right: auto;
+			margin-top: 5px;
+		}
+	}
+
+
 	.graph-wrapper {
 		margin: 0 auto;
 	}

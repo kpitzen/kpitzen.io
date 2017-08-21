@@ -52,7 +52,7 @@ class GraphInput extends React.Component {
 
   render() {
     return (
-        <div className="search align-center">
+        <div style={{marginTop: 10 + 'px'}} className="search align-center">
           <input type="text" onChange={this.handleTickerChange} value={this.state.ticker} />
           <input type="submit" value="Search" className="search-button" id="ticker-button" onClick={this.updateData}/>
         </div>
@@ -84,7 +84,7 @@ class Graph extends React.Component {
     // const status = 'Next player: X';
 
     return (<div>
-                <ResponsiveContainer className="align-center" height={700} width="100%" aspect={16/9} minWidth={400}>
+                <ResponsiveContainer height="80%" width="100%" aspect={16/9} minWidth={400}>
                     <ComposedChart data={ this.state.data.filter(getOptionTypes) }>
                         <Bar dataKey="volume" fill="#5385c1" yAxisId={1}/>
                         <Line type="monotone" dataKey="ask" stroke="#daa520" />
