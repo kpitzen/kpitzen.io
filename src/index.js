@@ -104,9 +104,62 @@ class Graph extends React.Component {
 }
 
 
+class BlogList extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            posts: [
+                {
+                    header: "Praesent placerat magna",
+                    body: "Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor lorem ipsum.",
+                    url: "#",
+                    urlLabel: "More",
+                    id: 0
+                },
+{
+                    header: "Fusce pellentesque tempus",
+                    body: "Sed adipiscing ornare risus. Morbi est est, blandit sit amet, sagittis vel, euismod vel, velit. Pellentesque egestas sem. Suspendisse commodo ullamcorper magna non comodo sodales tempus.",
+                    url: "#",
+                    urlLabel: "More",
+                    id: 1
+                },            ]
+        }
+    }
+
+    getPosts() {
+        const posts = this.state.posts;
+        const listPosts = posts.map((post) =>
+		<article key={post.id}>
+			<div className="image fit">
+			</div>
+			<header>
+				<h3>{post.header}</h3>
+			</header>
+			<p>{post.body}</p>
+			<footer>
+				<a href={post.url} className="button special">{post.urlLabel}</a>
+			</footer>
+		</article>
+        )
+        return <ul>{listPosts}</ul>
+
+    }
+
+    render() {
+        return(
+			this.getPosts()
+        );
+    }
+}
+
 // // ========================================
 
 ReactDOM.render(
   <Graph />,
   document.getElementById('graph')
+);
+
+ReactDOM.render(
+    <BlogList />,
+    document.getElementById('bloglist')
 );
