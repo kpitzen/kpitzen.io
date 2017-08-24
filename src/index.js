@@ -108,36 +108,33 @@ class BlogList extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            posts: [
-                {
-                    header: "Praesent placerat magna",
-                    body: "Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor lorem ipsum.",
-                    url: "#",
-                    urlLabel: "More",
-                    id: 0
-                },
-{
-                    header: "Fusce pellentesque tempus",
-                    body: "Sed adipiscing ornare risus. Morbi est est, blandit sit amet, sagittis vel, euismod vel, velit. Pellentesque egestas sem. Suspendisse commodo ullamcorper magna non comodo sodales tempus.",
-                    url: "#",
-                    urlLabel: "More",
-                    id: 1
-                },            ]
+            posts: []
         }
+        this.fetchPosts();
+    }
+
+    fetchPosts() {
+        var responseData = null;
+        fetch('https://sgvcnj5wp1.execute-api.us-east-1.amazonaws.com/dev/recent-posts?blog_name=kpitzen.io', {
+             mode: 'cors',}).then(response => response.json())
+            .then(json => this.setState({posts: json}))
+            .then(console.log(this.state.posts))
+            .catch(error => console.log(error));
+            return(responseData);
     }
 
     getPosts() {
         const posts = this.state.posts;
         const listPosts = posts.map((post) =>
-		<article key={post.id}>
+		<article key={post.filename}>
 			<div className="image fit">
 			</div>
 			<header>
-				<h3>{post.header}</h3>
+				<h3>{post.title}</h3>
 			</header>
-			<p>{post.body}</p>
+			<p>{post.abb_text}</p>
 			<footer>
-				<a href={post.url} className="button special">{post.urlLabel}</a>
+				{ <a href={post.url} className="button special">{"More"}</a> }
 			</footer>
 		</article>
         )
